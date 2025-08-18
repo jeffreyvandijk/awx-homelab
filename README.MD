@@ -5,6 +5,7 @@ Operator & Base:
 - openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out ./base/tls.crt -keyout ./base/tls.key -subj "/CN=$- {AWX_HOST}/O=${AWX_HOST}" -addext "subjectAltName = DNS:${AWX_HOST}"
 - change passwords(base/kustomization.yaml) & ingress(base/awx.yaml) vars
 - kubectl apply -k base
+- kubectl -n awx logs -f deployments/awx-operator-controller-manager
 
 Registry:
 
