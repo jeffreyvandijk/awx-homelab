@@ -39,3 +39,8 @@ spec:
 
   # Uncomment to reveal "censored" logs
   #no_log: false
+  web_node_selector: |
+    kubernetes.io/hostname: kube-worker-01
+
+  task_node_selector: |
+    kubernetes.io/hostname: kube-worker-01
