@@ -14,3 +14,4 @@ Registry:
 - change ingress vars(registry/ingress.yaml)
 - kubectl run htpasswd -it --restart=Never --image httpd:2.4 --rm -- htpasswd -nbB <user> <password>
 - change user/password vars(registry/configmap.yaml)
+- kubectl apply -k registry
