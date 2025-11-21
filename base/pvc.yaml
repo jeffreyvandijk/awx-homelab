@@ -1,8 +1,8 @@
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: awx-projects-claim
-  namespace: awx
 spec:
   accessModes:
     - ReadWriteOnce
@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 2Gi
-  storageClassName: longhorn
+  storageClassName: awx-projects-volume
