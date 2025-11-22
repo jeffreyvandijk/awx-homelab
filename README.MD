@@ -6,6 +6,9 @@ Operator & Base:
 - AWX_HOST="awx.example.com"
 - openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out ./base/tls.crt -keyout ./base/tls.key -subj "/CN=$- {AWX_HOST}/O=${AWX_HOST}" -addext "subjectAltName = DNS:${AWX_HOST}"
 - change passwords(base/kustomization.yaml) & ingress(base/awx.yaml) vars
+- sudo mkdir -p /data/postgres-15
+- sudo mkdir -p /data/projects
+- sudo chown 1000:0 /data/projects
 - kubectl apply -k base
 - kubectl -n awx logs -f deployments/awx-operator-controller-manager
 
